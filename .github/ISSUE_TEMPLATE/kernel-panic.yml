@@ -1,0 +1,133 @@
+name: Icepearl Kernel Panic
+description: Something gets in trouble while booting Icepearl
+title: "[PANIC] Add title here."
+labels: PANIC
+
+body:
+  - type: checkboxes
+    attributes:
+      label: Is the issue can have for this?
+      description: Please seaech the issue to see and not needed.
+      options:
+        - label: I search the issue that is exist.
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        # **Hardware Information**
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      description: "What Operating System did you use?"
+    validations:
+      required: true
+  - type: input
+    id: cpu
+    attributes:
+      label: CPU
+      description: "What CPU Name of your Computer to use?"
+    validations:
+      required: true
+  - type: input
+    id: gpu
+    attributes:
+      label: GPU
+      description: "What GPU Name of your Computer for display?"
+  - type: input
+    id: resolution
+    attributes:
+      label: Monitor Resolution
+      description: "What resolution display on your monitor?"
+    validations:
+      required: true
+  - type: input
+    id: storage
+    attributes:
+      label: Storage
+      description: "What Storage to use on the Computer in each disk?"
+    validations:
+      required: true
+  - type: input
+    id: vm
+    attributes:
+      label: Virtual Machine
+      description: "What Virtual Machine to run and boot Icepearl?"
+  - type: markdown
+    attributes:
+      value: |
+        # **Icepearl Information**
+  - type: dropdown
+    id: architecture
+    attributes:
+      label: Icepearl Architecture
+      description: "What Icepearl Architecture did you use and getting error?"
+      options:
+        - alpha
+        - arm64
+        - hppa
+        - loong64
+        - m68k
+        - mips64le
+        - ppc
+        - ppc64le
+        - riscv64
+        - s390x
+        - sh4
+        - sparc64
+        - x86_64
+    validations:
+      required: true
+  - type: dropdown
+    id: boot
+    attributes:
+      label: Bootable Device
+      description: "What is your bootable device to boot Icepearl?"
+      options:
+        - "Hard Disk"
+        - "SD Card"
+        - "DVD"
+        - "USB"
+        - "iPXE"
+        - "Floppy"
+    validations:
+      required: true
+  - type: dropdown
+    id: bootloader
+    attributes:
+      label: Bootloader
+      description: "What bootloader to be used to boot Icepearl?"
+      options:
+        - grub
+        - grub-legacy
+        - syslinux
+        - lilo
+        - refind
+        - refit
+        - u-boot
+        - yaboot
+        - colo
+        - palo
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        # **Icepearl Problem**
+  - type: textarea
+    id: problem
+    attributes:
+      label: Describe the problem
+      description: "What's the problem on the Icepearl error during boot?"
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: Describe what's happened
+      description: "What's happenimg on the Icepearl error during boot?"
+  - type: textarea
+    id: content
+    attributes:
+      label: Extra Content
+      description: "You can add extra content, pictures or videos here."
